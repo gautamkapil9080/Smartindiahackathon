@@ -2,6 +2,14 @@
 
 **Healthcare at your doorstep** - A comprehensive telemedicine platform designed specifically for rural healthcare in the Nabha region, serving 173+ villages with limited medical infrastructure.
 
+## 🌐 Live Demo
+**🔗 Live Application**: https://gautamkapil9080.github.io/NEW-SIHMVP  
+**📊 Source Code**: https://github.com/gautamkapil9080/NEW-SIHMVP
+
+### Demo Credentials:
+- **Patient**: Any name (e.g., "Rajesh Kumar") + Village (e.g., "Nabha")  
+- **Doctor**: `demo@doctor.com` / `demo123`
+
 ## 🌟 Problem Statement
 
 Rural healthcare in the Nabha region faces critical challenges:
