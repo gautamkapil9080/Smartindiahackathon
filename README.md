@@ -93,15 +93,17 @@ A Progressive Web App (PWA) that provides comprehensive healthcare services opti
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 16+ and npm
-- Firebase account (for database)
-- Modern web browser
+- **Node.js 16+** - Download from [nodejs.org](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** - Download from [git-scm.com](https://git-scm.com/)
+- **Modern web browser** (Chrome, Firefox, Safari, Edge)
+- **Firebase account** (optional - app works offline)
 
-### Installation
+### 🔧 Quick Start (5 minutes)
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/YOUR_USERNAME/rural-healthcare-mvp.git
    cd rural-healthcare-mvp
    ```
 
@@ -109,28 +111,60 @@ A Progressive Web App (PWA) that provides comprehensive healthcare services opti
    ```bash
    npm install
    ```
+   *This may take 2-3 minutes to download all packages*
 
-3. **Configure Firebase** (Optional for demo)
-   - Create a Firebase project at https://console.firebase.google.com
-   - Enable Firestore Database
-   - Copy your Firebase config to `src/firebase.ts`
-
-4. **Start the development server**
+3. **Start the development server**
    ```bash
    npm start
    ```
+   *Server will start on http://localhost:3000 and open automatically*
 
-5. **Open in browser**
-   - Navigate to `http://localhost:3000`
-   - The app will automatically reload if you make changes
+4. **Start using the app!**
+   - **Patient Demo**: Use any name + village (suggestions provided)
+   - **Doctor Demo**: `demo@doctor.com` / `demo123`
 
-### Build for Production
+### 🏥 Firebase Setup (Optional)
+
+The app works **completely offline** using localStorage. For real-time features:
+
+1. Create Firebase project at https://console.firebase.google.com
+2. Enable Firestore Database
+3. Copy config to `src/firebase.ts`:
+   ```typescript
+   const firebaseConfig = {
+     apiKey: "your-api-key",
+     authDomain: "your-project.firebaseapp.com",
+     projectId: "your-project-id",
+     // ... rest of config
+   };
+   ```
+
+### 📦 Available Commands
 
 ```bash
-npm run build
+npm start          # Start development server (http://localhost:3000)
+npm test           # Run tests
+npm run build      # Build for production
+npm run eject      # Eject from Create React App (not recommended)
 ```
 
-This builds the app for production to the `build` folder.
+### 🐛 Troubleshooting
+
+**Port 3000 already in use?**
+```bash
+npm start -- --port 3001
+```
+
+**npm install fails?**
+```bash
+npm cache clean --force
+npm install
+```
+
+**Node.js not found?**
+- Install from [nodejs.org](https://nodejs.org/)
+- Restart your terminal after installation
+- Verify with `node --version` and `npm --version`
 
 ## 🎯 Demo Credentials
 
