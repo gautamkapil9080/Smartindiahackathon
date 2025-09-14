@@ -1,5 +1,18 @@
 # Rural Healthcare Telemedicine MVP - Nabha
 
+## 🚀 Live Demo
+
+### 🌐 Try the Application
+- **Live Demo**: [https://gautamkapil9080.github.io/NEW-SIHMVP/](https://gautamkapil9080.github.io/NEW-SIHMVP/)
+- **Vercel Deployment**: [https://rural-healthcare-mvp.vercel.app](https://rural-healthcare-mvp.vercel.app)
+- **Netlify Deployment**: [https://rural-healthcare-mvp.netlify.app](https://rural-healthcare-mvp.netlify.app)
+
+### 📱 Demo Credentials
+```
+Phone: 9876543210
+Password: demo123
+```
+
 ## 🏥 Project Overview
 
 A telemedicine platform designed to address healthcare accessibility challenges in Nabha and surrounding rural areas of Punjab, India. This MVP provides video consultations, digital health records, medicine availability tracking, and offline capabilities optimized for low-bandwidth rural environments.
@@ -19,27 +32,73 @@ A telemedicine platform designed to address healthcare accessibility challenges 
 5. **AI Symptom Checker** - Rule-based health assessment
 6. **Offline Mode** - Works without constant internet
 
-## 🏗️ Architecture
+## 🏗️ Project Structure
 
 ```
 rural-healthcare-mvp/
-├── backend/                 # Node.js/Express API server
-│   └── src/
-│       ├── controllers/     # Request handlers
-│       ├── models/         # Database models
-│       ├── routes/         # API endpoints
-│       ├── middleware/     # Auth & validation
-│       └── utils/          # Helper functions
-├── frontend/               # React web application
+├── .github/
+│   └── workflows/
+│       └── deploy.yml         # GitHub Actions CI/CD
+├── backend/
 │   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/         # Application views
-│   │   ├── services/      # API integration
-│   │   └── utils/         # Frontend utilities
-│   └── public/            # Static assets
-├── database/              # SQLite database files
-├── docs/                  # Additional documentation
-└── scripts/               # Deployment & utility scripts
+│   │   ├── config/
+│   │   │   └── database.js   # Database configuration
+│   │   ├── controllers/      # Request handlers
+│   │   ├── middleware/
+│   │   │   ├── auth.js       # JWT authentication
+│   │   │   ├── errorHandler.js
+│   │   │   └── rateLimiter.js
+│   │   ├── models/
+│   │   │   └── User.js       # User model with auth
+│   │   ├── routes/
+│   │   │   ├── auth.routes.js
+│   │   │   ├── consultation.routes.js
+│   │   │   ├── medicine.routes.js
+│   │   │   ├── record.routes.js
+│   │   │   └── symptom.routes.js
+│   │   ├── utils/
+│   │   │   └── symptomData.js # AI symptom checker data
+│   │   └── server.js         # Main server file
+│   ├── .env.example          # Environment variables template
+│   └── package.json          # Backend dependencies
+├── frontend/
+│   ├── public/
+│   │   ├── index.html        # Main HTML file
+│   │   └── manifest.json     # PWA manifest
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Layout/
+│   │   │   │   └── Layout.js  # Main layout wrapper
+│   │   │   └── PrivateRoute.js # Protected route component
+│   │   ├── i18n/
+│   │   │   └── i18n.js        # Multi-language support
+│   │   ├── pages/
+│   │   │   ├── Login.js       # Login page
+│   │   │   ├── Register.js    # Registration page
+│   │   │   ├── Dashboard.js   # Main dashboard
+│   │   │   ├── Consultations.js
+│   │   │   ├── VideoCall.js   # Video consultation
+│   │   │   ├── HealthRecords.js
+│   │   │   ├── MedicineTracker.js
+│   │   │   ├── SymptomChecker.js
+│   │   │   └── Profile.js
+│   │   ├── store/
+│   │   │   └── store.js       # Redux store configuration
+│   │   ├── App.js             # Main React component
+│   │   ├── index.js           # React entry point
+│   │   ├── index.css          # Global styles
+│   │   ├── serviceWorker.js  # PWA service worker
+│   │   └── serviceWorkerRegistration.js
+│   └── package.json          # Frontend dependencies
+├── database/                 # SQLite database files
+├── docs/                     # Additional documentation
+├── scripts/                  # Utility scripts
+├── .gitignore               # Git ignore file
+├── Dockerfile               # Docker configuration
+├── docker-compose.yml       # Docker Compose setup
+├── netlify.toml             # Netlify deployment config
+├── vercel.json              # Vercel deployment config
+└── README.md                # Project documentation
 ```
 
 ## 🚀 Quick Start
