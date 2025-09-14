@@ -13,6 +13,20 @@ Rural Healthcare MVP is a Progressive Web App (PWA) designed for telemedicine se
 - **Build for production**: `npm run build`
 - **Run tests**: `npm test`
 - **Install dependencies**: `npm install`
+- **Start on different port**: `npm start -- --port 3001` (if 3000 is occupied)
+- **Clear npm cache**: `npm cache clean --force` (troubleshooting)
+
+### Deployment Commands
+- **Quick deploy**: `.\.\deploy.bat` (Windows batch file for full deployment process)
+- **Manual deploy**: `npm run deploy-manual` (custom GitHub Pages deployment)
+- **Standard deploy**: `npm run deploy` (gh-pages deployment)
+- **Pre-deploy build**: `npm run predeploy` (runs build before deployment)
+
+### PowerShell-Specific Commands
+- **List files**: `Get-ChildItem` or `ls` (not `ls -la`)
+- **Navigate**: `Set-Location "path"` or `cd "path"`
+- **View file structure**: `Get-ChildItem -Recurse | Select-Object FullName`
+- **Check Node version**: `node --version` and `npm --version`
 
 ### Testing Individual Features
 - **Test symptom analysis**: Navigate to patient dashboard → Enter symptoms in the symptom checker
@@ -58,6 +72,13 @@ The app uses dedicated service classes that act as a bridge between components a
 - `PatientDashboard`: Symptom checker, consultation requests, emergency services
 - `DoctorDashboard`: Pending requests, video calls, prescription forms
 - `FamilyMode`: Family member management and health tracking
+- `HomeTab`: Central hub with 6 portal buttons for easy navigation
+
+**Feature Components**:
+- `SymptomChecker`: Standalone AI symptom analysis tool
+- `Emergency`: Comprehensive emergency services interface
+- `GovernmentSchemes`: Information and access to health schemes
+- `PharmacyPortal`: Medicine inventory and pharmacy locator
 
 **Authentication Components**:
 - `PatientLogin`: Name + village input with suggestions
@@ -139,6 +160,14 @@ The current `aiService.ts` is a mock implementation with pattern-matching for co
 3. **State Management**: Use existing AuthContext or create new context for complex state
 4. **Styling**: Use Tailwind with custom healthcare colors (primary blue, secondary green, accent orange, emergency red)
 
+### Deployment Workflow
+
+1. **Local testing**: `npm start` → Test all features
+2. **Build verification**: `npm run build` → Check for build errors
+3. **Quick deployment**: Run `.\.\deploy.bat` for automated deployment
+4. **Monitor deployment**: Check https://gautamkapil9080.github.io/NEW-SIHMVP (live URL)
+5. **Deployment repos**: Primary: SIH-MVP, Fallback: NEW-SIHMVP
+
 ### Testing Consultation Flow
 
 1. Start as patient: Enter name/village → Add symptoms → Request consultation
@@ -202,6 +231,15 @@ Pre-configured information for:
 - **PWA implementation**: Service worker ready for app-like installation
 - **Mobile-first design**: Optimized for basic smartphones common in rural areas
 
+## Recent Updates & Features
+
+### Home Tab Integration
+- **6 Portal System**: Centralized navigation with dedicated buttons
+- **Symptom Checker**: Standalone access outside patient dashboard
+- **Pharmacy Portal**: Direct medicine search and inventory tracking
+- **Government Schemes**: Enhanced scheme information and helpline access
+- **Emergency Services**: Improved emergency response interface
+
 ## Rural Healthcare Specific Features
 
 1. **Multilingual Support Ready**: Infrastructure for English/Hindi/Punjabi (pending implementation)
@@ -209,3 +247,10 @@ Pre-configured information for:
 3. **Common Rural Conditions**: AI trained on fever, respiratory, gastric, skin conditions
 4. **Government Helpline Integration**: Direct calling capabilities for various services
 5. **Pharmacy Network**: Mock implementation for medicine availability tracking across villages
+
+## Repository URLs
+
+- **Primary Repository**: https://github.com/gautamkapil9080/SIH-MVP
+- **Backup Repository**: https://github.com/gautamkapil9080/NEW-SIHMVP
+- **Live Demo**: https://gautamkapil9080.github.io/NEW-SIHMVP
+- **Working Demo**: https://gautamkapil9080.github.io/SIH-MVP/working-demo.html

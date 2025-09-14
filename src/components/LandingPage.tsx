@@ -3,9 +3,10 @@ import React from 'react';
 interface LandingPageProps {
   onPatientLogin: () => void;
   onDoctorLogin: () => void;
+  onEnterApp?: () => void;
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ onPatientLogin, onDoctorLogin }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ onPatientLogin, onDoctorLogin, onEnterApp }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
       {/* Header */}
@@ -55,31 +56,51 @@ const LandingPage: React.FC<LandingPageProps> = ({ onPatientLogin, onDoctorLogin
             </div>
           </div>
 
-          {/* Login Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <button
-              onClick={onPatientLogin}
-              className="btn-primary text-lg px-8 py-4 min-w-48"
-            >
-              <div className="flex items-center justify-center space-x-3">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                <span>Patient Login</span>
-              </div>
-            </button>
+          {/* Main Action Buttons */}
+          <div className="flex flex-col items-center gap-6 mb-12">
+            {onEnterApp && (
+              <button
+                onClick={onEnterApp}
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-xl px-12 py-5 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 min-w-64"
+              >
+                <div className="flex items-center justify-center space-x-3">
+                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                  <span>Enter Healthcare Portal</span>
+                </div>
+              </button>
+            )}
             
-            <button
-              onClick={onDoctorLogin}
-              className="btn-secondary text-lg px-8 py-4 min-w-48"
-            >
-              <div className="flex items-center justify-center space-x-3">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                <span>Doctor Login</span>
+            {/* Login Buttons */}
+            <div className="text-center">
+              <p className="text-gray-600 mb-4">Or login directly to your account:</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <button
+                  onClick={onPatientLogin}
+                  className="btn-primary text-lg px-8 py-4 min-w-48"
+                >
+                  <div className="flex items-center justify-center space-x-3">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    <span>Patient Login</span>
+                  </div>
+                </button>
+                
+                <button
+                  onClick={onDoctorLogin}
+                  className="btn-secondary text-lg px-8 py-4 min-w-48"
+                >
+                  <div className="flex items-center justify-center space-x-3">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Doctor Login</span>
+                  </div>
+                </button>
               </div>
-            </button>
+            </div>
           </div>
         </div>
 
