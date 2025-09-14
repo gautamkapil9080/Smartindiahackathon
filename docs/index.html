@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Healthcare MVP - Smart India Hackathon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .status {
+            background: #f0f4f8;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .status-title {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        .features {
+            text-align: left;
+            margin: 30px 0;
+        }
+        .features h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .features li:before {
+            content: "✅ ";
+            color: #22c55e;
+            font-weight: bold;
+        }
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #0066cc;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #0052a3;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #f0f4f8;
+            color: #333;
+        }
+        .btn-secondary:hover {
+            background: #e0e7ed;
+        }
+        .info-box {
+            background: #fff8dc;
+            border-left: 4px solid #f97316;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .info-box h4 {
+            color: #f97316;
+            margin-bottom: 10px;
+        }
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .tech-badge {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 Rural Healthcare MVP</h1>
+        <p class="subtitle">Smart India Hackathon Project</p>
+        
+        <div class="status">
+            <div class="status-title">📍 Project Status</div>
+            <p>Telemedicine platform for 173+ villages in Nabha, Punjab</p>
+        </div>
+
+        <div class="features">
+            <h3>✨ Key Features</h3>
+            <ul>
+                <li>Video Consultations with Doctors</li>
+                <li>AI-Powered Symptom Analysis</li>
+                <li>Digital Prescription Generation</li>
+                <li>Emergency Services Integration</li>
+                <li>Medicine Availability Tracker</li>
+                <li>Government Health Schemes Access</li>
+                <li>Family Health Management</li>
+                <li>Offline-First PWA Architecture</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h4>⚠️ Setup Required</h4>
+            <p>To run the full application, you need Node.js installed on your system.</p>
+            <p style="margin-top: 10px;">Follow the setup instructions in the repository README.</p>
+        </div>
+
+        <div class="buttons">
+            <a href="https://github.com/gautamkapil9080/Smartindiahackathon" class="btn btn-primary">
+                📂 View Repository
+            </a>
+            <a href="https://github.com/gautamkapil9080/Smartindiahackathon/blob/main/README.md" class="btn btn-secondary">
+                📖 Documentation
+            </a>
+            <a href="https://github.com/gautamkapil9080/Smartindiahackathon/blob/main/SETUP_GUIDE.md" class="btn btn-secondary">
+                🚀 Setup Guide
+            </a>
+        </div>
+
+        <div class="tech-stack">
+            <span class="tech-badge">React 18</span>
+            <span class="tech-badge">TypeScript</span>
+            <span class="tech-badge">Tailwind CSS</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">Jitsi Meet</span>
+            <span class="tech-badge">jsPDF</span>
+            <span class="tech-badge">PWA</span>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 0.9em;">
+            <p>Built for Smart India Hackathon</p>
+            <p>Serving rural healthcare needs in Punjab</p>
+        </div>
+    </div>
+</body>
+</html>

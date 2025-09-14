@@ -2,7 +2,7 @@
   "name": "rural-healthcare-mvp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gautamkapil9080.github.io/NEW-SIHMVP",
+  "homepage": "https://gautamkapil9080.github.io/Smartindiahackathon",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
