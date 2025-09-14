@@ -1,0 +1,19 @@
+{
+  "short_name": "Rural Health",
+  "name": "Rural Healthcare Telemedicine - Nabha",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2E7D32",
+  "background_color": "#ffffff",
+  "description": "Telemedicine platform for rural healthcare in Nabha, Punjab",
+  "categories": ["medical", "health"],
+  "lang": "en-IN",
+  "orientation": "portrait"
+}

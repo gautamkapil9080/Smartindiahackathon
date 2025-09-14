@@ -1,3 +1,327 @@
+# Rural Healthcare Telemedicine MVP - Nabha
+
+## 🏥 Project Overview
+
+A telemedicine platform designed to address healthcare accessibility challenges in Nabha and surrounding rural areas of Punjab, India. This MVP provides video consultations, digital health records, medicine availability tracking, and offline capabilities optimized for low-bandwidth rural environments.
+
+### Problem Statement (ID: 25018)
+- **Organization**: Government of Punjab, Department of Higher Education
+- **Category**: Software (MedTech/BioTech/HealthTech)
+- **Target**: 173 villages served by understaffed Nabha Civil Hospital
+
+## 🎯 Key Features
+
+### Core MVP Features
+1. **Multi-lingual Support** - Punjabi, Hindi, and English interfaces
+2. **Video Consultations** - Low-bandwidth optimized telemedicine
+3. **Digital Health Records** - Offline-capable patient records
+4. **Medicine Tracker** - Real-time pharmacy inventory
+5. **AI Symptom Checker** - Rule-based health assessment
+6. **Offline Mode** - Works without constant internet
+
+## 🏗️ Architecture
+
+```
+rural-healthcare-mvp/
+├── backend/                 # Node.js/Express API server
+│   └── src/
+│       ├── controllers/     # Request handlers
+│       ├── models/         # Database models
+│       ├── routes/         # API endpoints
+│       ├── middleware/     # Auth & validation
+│       └── utils/          # Helper functions
+├── frontend/               # React web application
+│   ├── src/
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/         # Application views
+│   │   ├── services/      # API integration
+│   │   └── utils/         # Frontend utilities
+│   └── public/            # Static assets
+├── database/              # SQLite database files
+├── docs/                  # Additional documentation
+└── scripts/               # Deployment & utility scripts
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16+ recommended)
+- npm or yarn
+- Git
+
+### Installation
+
+1. **Clone the repository**
+```bash
+cd rural-healthcare-mvp
+```
+
+2. **Install Backend Dependencies**
+```bash
+cd backend
+npm install
+```
+
+3. **Install Frontend Dependencies**
+```bash
+cd ../frontend
+npm install
+```
+
+4. **Set up environment variables**
+```bash
+# Create .env file in backend directory
+cp backend/.env.example backend/.env
+# Edit with your configuration
+```
+
+5. **Initialize Database**
+```bash
+cd backend
+npm run db:init
+```
+
+6. **Start Development Servers**
+
+Backend (Terminal 1):
+```bash
+cd backend
+npm run dev
+# Server runs on http://localhost:5000
+```
+
+Frontend (Terminal 2):
+```bash
+cd frontend
+npm start
+# App runs on http://localhost:3000
+```
+
+## 💻 Technology Stack
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **SQLite** - Lightweight database
+- **JWT** - Authentication
+- **Socket.io** - Real-time communication
+- **WebRTC** - Video calling
+
+### Frontend
+- **React** - UI framework
+- **Material-UI** - Component library
+- **Redux Toolkit** - State management
+- **Service Workers** - Offline capabilities
+- **IndexedDB** - Local data storage
+- **WebRTC** - Video consultations
+
+## 📱 Features Implementation
+
+### 1. User Registration/Login
+- Phone number-based authentication
+- OTP verification
+- Role-based access (Patient/Doctor/Pharmacy)
+
+### 2. Video Consultations
+- WebRTC-based video calls
+- Low-bandwidth optimization
+- Call scheduling and queuing
+- In-call chat and file sharing
+
+### 3. Digital Health Records
+- Patient medical history
+- Prescription management
+- Lab report uploads
+- Offline sync capability
+
+### 4. Medicine Availability
+- Real-time inventory tracking
+- Pharmacy network integration
+- Alternative medicine suggestions
+- Price comparison
+
+### 5. AI Symptom Checker
+- Multi-language symptom input
+- Common rural health conditions database
+- Emergency detection and alerts
+- Doctor recommendation
+
+### 6. Offline Functionality
+- Service worker caching
+- Queue-based data sync
+- Local data persistence
+- Automatic retry mechanisms
+
+## 🌐 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/verify-otp` - OTP verification
+
+### Consultations
+- `GET /api/consultations` - List consultations
+- `POST /api/consultations/book` - Book appointment
+- `GET /api/consultations/:id` - Get consultation details
+- `POST /api/consultations/:id/join` - Join video call
+
+### Health Records
+- `GET /api/records` - Get patient records
+- `POST /api/records` - Create new record
+- `PUT /api/records/:id` - Update record
+- `GET /api/records/:id/download` - Download record
+
+### Medicine Tracker
+- `GET /api/medicines/search` - Search medicines
+- `GET /api/medicines/availability` - Check availability
+- `GET /api/pharmacies/nearby` - Find nearby pharmacies
+
+### Symptom Checker
+- `POST /api/symptoms/check` - Analyze symptoms
+- `GET /api/symptoms/conditions` - List common conditions
+
+## 🔒 Security Considerations
+
+- JWT-based authentication
+- HTTPS enforcement in production
+- Data encryption at rest
+- HIPAA compliance considerations
+- Regular security audits
+- Input validation and sanitization
+
+## 📊 Database Schema
+
+### Users Table
+- id, phone, name, role, language, created_at
+
+### Patients Table
+- id, user_id, age, gender, village, medical_history
+
+### Doctors Table
+- id, user_id, specialization, license_no, hospital_id
+
+### Appointments Table
+- id, patient_id, doctor_id, date_time, status, meeting_link
+
+### Health Records Table
+- id, patient_id, type, data, created_by, created_at
+
+### Medicines Table
+- id, name, generic_name, category, typical_price
+
+### Pharmacy Inventory Table
+- id, pharmacy_id, medicine_id, quantity, price, updated_at
+
+## 🚢 Deployment
+
+### Local Development
+```bash
+npm run dev
+```
+
+### Production Build
+```bash
+# Backend
+cd backend
+npm run build
+
+# Frontend
+cd frontend
+npm run build
+```
+
+### Docker Deployment
+```bash
+docker-compose up -d
+```
+
+### Environment Variables
+Required environment variables:
+- `DATABASE_URL` - SQLite database path
+- `JWT_SECRET` - JWT signing secret
+- `PORT` - Server port
+- `NODE_ENV` - Environment (development/production)
+- `TWILIO_ACCOUNT_SID` - For SMS OTP (optional)
+- `TWILIO_AUTH_TOKEN` - For SMS OTP (optional)
+
+## 📈 Performance Optimization
+
+- Lazy loading of components
+- Image compression and optimization
+- CDN integration for static assets
+- Database query optimization
+- Caching strategies
+- Progressive Web App features
+
+## 🧪 Testing
+
+```bash
+# Run backend tests
+cd backend
+npm test
+
+# Run frontend tests
+cd frontend
+npm test
+
+# E2E tests
+npm run test:e2e
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is developed for the Government of Punjab under the Department of Higher Education.
+
+## 👥 Stakeholders
+
+- **Primary**: Rural patients in Nabha and 173 surrounding villages
+- **Secondary**: Nabha Civil Hospital staff
+- **Tertiary**: Punjab Health Department, Local pharmacies
+
+## 📊 Success Metrics
+
+- Number of consultations completed
+- Average wait time reduction
+- Medicine availability improvement
+- User satisfaction scores
+- System uptime and reliability
+
+## 🆘 Support
+
+For issues and questions:
+- Create an issue in the repository
+- Contact the development team
+- Refer to the documentation in `/docs`
+
+## 🗺️ Roadmap
+
+### Phase 1 (MVP) - Current
+- Basic telemedicine functionality
+- User authentication
+- Simple symptom checker
+
+### Phase 2
+- Advanced AI diagnosis assistance
+- Integration with government health schemes
+- Multi-hospital network
+
+### Phase 3
+- Wearable device integration
+- Predictive health analytics
+- Expanded language support
+
+---
+
+**Built with ❤️ for rural healthcare accessibility in Punjab**
+
 # Rural Healthcare MVP
 
 **Healthcare at your doorstep** - A comprehensive telemedicine platform designed specifically for rural healthcare in the Nabha region, serving 173+ villages with limited medical infrastructure.
